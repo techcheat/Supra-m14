@@ -1,0 +1,28 @@
+Q5. Accessing the data member's 
+
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;  // Data member
+
+    void setName(string n) {
+        name = n;  // Accessing & modifying data member
+    }
+
+    void displayName() {
+        cout << "Student Name: " << name;
+    }
+};
+
+int main() {
+    Student s;  // Creating an object
+    string studentName;
+    cout << "Enter student name: ";
+    cin >> studentName;
+
+    s.setName(studentName);  // Accessing data member via function
+    s.displayName();  // Displaying data member value
+    return 0;
+}
