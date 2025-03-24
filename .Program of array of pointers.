@@ -1,0 +1,22 @@
+Q8.Program of array of pointers.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5], *ptr;  // Array of 5 integers and a pointer
+
+    cout << "Enter 5 numbers: ";
+    for (int i = 0; i < 5; i++) {  
+        cin >> arr[i];  // Taking array input
+    }
+
+    ptr = arr;  // Pointer points to the first element of the array
+
+    cout << "Array elements: ";
+    for (int i = 0; i < 5; i++) {  
+        cout << *(ptr + i) << " ";  // Accessing elements using pointer arithmetic
+    }
+
+    return 0;  // End of program
+}
