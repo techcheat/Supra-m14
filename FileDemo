@@ -1,0 +1,40 @@
+Q19. 
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class FileDemo {
+public:
+    void countWordsLines(string filename) {
+        ifstream file(filename);  // Open file in read mode
+        string word, line;
+        int wordCount = 0, lineCount = 0;
+
+        if (!file) {
+            cout << "File not found!" << endl;
+            return;
+        }
+
+        while (getline(file, line)) {  
+            lineCount++;  // Counting lines
+            int pos = 0;
+            while (pos < line.length()) {  
+                while (pos < line.length() && line[pos] == ' ') pos++;  // Skip spaces
+                if (pos < line.length()) wordCount++;  // Count word
+                while (pos < line.length() && line[pos] != ' ') pos++;  // Move to next word
+            }
+        }
+
+        file.close();
+        cout << "Total Words: " << wordCount << "\nTotal Lines: " << lineCount << endl;
+    }
+};
+
+int main() {
+    FileDemo obj;
+    obj.countWordsLines("sample.txt");  // Provide the filename here
+    return 0;
+}
