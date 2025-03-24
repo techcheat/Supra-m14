@@ -1,0 +1,29 @@
+Q4.
+
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int rollNo;
+
+    void getDetails() {
+        cout << "Enter student name: ";
+        getline(cin, name);  // Accepts full name with spaces
+        cout << "Enter roll number: ";
+        cin >> rollNo;
+    }
+
+    void displayDetails() {
+        cout << "Student Name: " << name;
+        cout << "\nRoll Number: " << rollNo;
+    }
+};
+
+int main() {
+    Student s;  
+    s.getDetails();  
+    s.displayDetails();  
+    return 0;
+}
