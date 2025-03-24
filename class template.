@@ -1,0 +1,29 @@
+Q21. 
+#include <iostream>
+using namespace std;
+
+template <typename T>  // Class template
+class Sample {
+    T data;  // Generic data member
+
+public:
+    Sample(T value) {  // Constructor to initialize data
+        data = value;
+    }
+
+    void display() {  // Function to display data
+        cout << "Value: " << data << endl;
+    }
+};
+
+int main() {
+    Sample<int> obj1(10);       // Object with int type
+    Sample<double> obj2(3.14);  // Object with double type
+    Sample<string> obj3("Hello"); // Object with string type
+
+    obj1.display();
+    obj2.display();
+    obj3.display();
+
+    return 0;
+}
