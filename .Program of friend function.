@@ -1,0 +1,31 @@
+Q7.Program of friend function. 
+
+#include <iostream>
+using namespace std;
+
+class Number {
+    int num;  // Private data member
+
+public:
+    void setNumber(int n) {
+        num = n;
+    }
+
+    // Declaring friend function
+    friend void display(Number n);
+};
+
+// Friend function definition
+void display(Number n) {
+    cout << "Number: " << n.num;
+}
+
+int main() {
+    Number obj;
+    int x;
+    cout << "Enter a number: ";
+    cin >> x;
+    obj.setNumber(x);
+    display(obj);  // Calling friend function
+    return 0;
+}
