@@ -1,0 +1,27 @@
+Q10.Program following example explains how addition operator can be overloaded.
+Code:-
+
+#include <iostream>
+using namespace std;
+
+class Add {
+    int value;
+public:
+    Add(int x) { value = x; }
+
+    // Overloading the + operator
+    Add operator+(Add obj) {
+        return Add(value + obj.value);
+    }
+
+    void show() {
+        cout << "Result: " << value << endl;
+    }
+};
+
+int main() {
+    Add obj1(10), obj2(20);
+    Add result = obj1 + obj2;  // Calls overloaded + operator
+    result.show();
+    return 0;
+}
