@@ -1,0 +1,28 @@
+Q13
+
+#include <iostream>
+using namespace std;
+
+class Student {
+    string name;
+
+public:
+    void setName(string name) {
+        this->name = name;  // Using 'this' pointer to refer to the current object's variable
+    }
+
+    void display() {
+        cout << "Student Name: " << this->name;  // Using 'this' pointer (optional here)
+    }
+};
+
+int main() {
+    Student s;
+    string studentName;
+    cout << "Enter student name: ";
+    cin >> studentName;
+
+    s.setName(studentName);  // Setting name using this pointer
+    s.display();  // Displaying name
+    return 0;
+}
